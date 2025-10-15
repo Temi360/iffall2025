@@ -32,17 +32,22 @@ h2 {
 
 }
 
+section.intro {
+    background-color: lightblue;
+}
 
 section.intro>div {
     /* background-color: rgba(0, 0, 0, .25); */
     width: 960px;
     margin: auto;
-
+    padding-bottom: 40px;
 }
 
 
 
 section.intro>div>h3 {
+    margin-top: 0;
+    padding-top: 40px;
     text-align: center;
     font-size: 40px;
     margin-bottom: 32px;
@@ -64,17 +69,24 @@ section.intro>div>p {
     margin-top: 0px;
 }
 
+section.middle {
+    background-color: lightsalmon;
+
+}
+
 section.middle>div {
     width: 960px;
     margin: auto;
+    padding-bottom: 71px;
 
 }
 
 section.middle>div>h3 {
     text-align: center;
     font-size: 40px;
-    margin-top: 97px;
-    margin-bottom: 0px;
+    padding-top: 41px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 section.middle ul {
@@ -113,12 +125,16 @@ section.middle .gridimagetext {
     line-height: 1.379;
 }
 
+section.end {
+    background-color: lightgreen;
+
+}
 
 section.end>div>h3 {
     text-align: center;
     font-size: 40px;
-    margin-top: 112px;
     margin-bottom: 31px;
+    margin-top: 0px;
 }
 
 section.end>div {
@@ -126,6 +142,9 @@ section.end>div {
     width: 705px;
     margin: auto;
     text-align: center;
+    padding-top: 41px;
+    padding-bottom: 75px;
+
 
 }
 
@@ -134,8 +153,15 @@ section.end>div>p {
     line-height: 1.3899;
 }
 
+footer {
+    padding-top: 1px;
+    padding-bottom: 28px;
+    background-color: lightcyan;
+}
+
 footer>p {
-    margin-top: 142px;
+    display: block;
+    margin-top: 41px;
     margin-left: 360px;
     font-size: 18px;
 }
