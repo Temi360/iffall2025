@@ -6,117 +6,148 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
-    background-color: dark;
-    color: #333;
-    line-height: 1.6;
-    padding: 0;
+    background-color: #fffaf3;
+    color: #3b2f2f;
+    line-height: 1.7;
 }
 
-/* setting background image: use background size(cover) and background position(center bottom)*/
 header {
     background-image: url('../images/puffpuffbackground2.jpg');
     background-size: cover;
     background-position: center bottom;
-    color: #eee;
+    color: #fffdf9;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 6rem 1rem;
+    position: relative;
 }
 
+
 header h1 {
+    position: relative;
     font-family: "rosalind", sans-serif;
-    font-weight: 400;
+    font-weight: 800;
     font-style: normal;
     font-size: 100px;
     letter-spacing: -1px;
-
+    color: #fffdf9;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
 }
+
+.rating {
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.stars-outer {
+    position: relative;
+    display: inline-block;
+    color: #ccc;
+    font-family: Arial, sans-serif;
+}
+
+.stars-outer::before {
+    content: "★★★★★";
+}
+
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 90%;
+    color: #f2c94c;
+}
+
+.stars-inner::before {
+    content: "★★★★★";
+}
+
+.rating-value {
+    font-weight: 600;
+    color: white;
+    margin-left: 0.3rem;
+}
+
 
 em {
     font-style: normal;
     font-weight: 600;
 }
 
-.tk-rosalind {
-    font-family: "rosalind", sans-serif;
-}
-
-s header .subtitle {
-    font-weight: 400;
-    margin-top: 0.5rem;
-    color: black;
-}
-
-
 .recipeinfocontainer {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 1.5rem;
+    padding: 2rem;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-.ingredients .info {
-    background-color: #fafdf3;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.prepinfo h3 {
-    color: #983628;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-}
-
-.ingredients ul {
-    margin-left: 1.2rem;
-    margin-bottom: 1rem;
-}
-
+.ingredients .info,
 .instructions {
-    background-color: #fafdf3;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: #fffdf9;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
 }
 
+.prepinfo h3,
 .instructions h3 {
-    color: #983628;
+    color: #d16a38;
+    margin-bottom: 0rem;
+    font-size: 1.2rem;
+}
+
+.prepinfo>div {
+    margin-bottom: 1rem;
+
+}
+
+.ingredientsdiv {
     margin-bottom: 1rem;
 }
 
+
+.ingredients ul,
 .instructions ol {
     margin-left: 1.2rem;
 }
 
+
+
 .instructions li {
-    margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 .instructions img {
     width: 100%;
-    max-width: 350px;
     height: auto;
-    aspect-ratio: 4 / 3;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-
-    margin-top: 0.5rem;
     border-radius: 10px;
+    margin-top: 0.5rem;
     display: block;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
-
 
 footer {
     text-align: center;
     padding: 2rem 1rem;
-    background-color: #222;
-    color: #eee;
+    background-color: #3b2f2f;
+    color: #f6f1e9;
     font-size: 0.9rem;
 }
 
 footer a {
-    color: #f5a623;
+    color: #f2c94c;
+    text-decoration: none;
+}
+
+footer a:hover {
     text-decoration: underline;
 }
 
@@ -135,12 +166,26 @@ footer a {
     .instructions {
         flex: 2;
     }
-
 }
 
 @media (max-width: 600px) {
-    .hide-on-mobile {
+    header {
+        background-image: none;
+        padding: 2rem 1rem;
+        /* smaller vertical padding */
+    }
+
+    header h1 {
+        color: #d16a38;
+        font-size: 60px;
+        text-shadow: none;
+        margin-bottom: 0;
+        /* remove extra bottom margin */
+    }
+
+    .subtitle {
         display: none;
+        /* ensure subtitle is hidden */
     }
 
     body {
@@ -152,21 +197,15 @@ footer a {
         padding: 1rem;
     }
 
+    .rating .star {
+        font-size: 1.2rem;
+    }
+
+    .rating-value {
+        color: #3b2f2f
+    }
+
     footer {
         font-size: 0.8rem;
     }
-
-    header {
-        background-image: none;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        padding-bottom: 0;
-
-    }
-
-    header h1 {
-        color: #983628;
-        font-size: 70px;
-    }
-
 }
