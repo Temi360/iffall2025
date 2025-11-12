@@ -1,0 +1,159 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #FFB5A6, #FFFCF5, #487B6F);
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Kantumruy Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    /* so we can absolutely center the links */
+    padding: 10px 40px;
+    font-weight: 200;
+}
+
+.logo {
+    flex: 0 0 auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* perfectly centers horizontally */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #9D8A6F;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #487B6F;
+}
+
+
+/* Hero section */
+.hero-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+/* Hero content styles */
+.hero-content h1 {
+    font-size: 6rem;
+    line-height: 1.1;
+    margin-top: 100;
+    margin-bottom: 0;
+    color: #2b4c47;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-family: "cofo-raffine", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #5b6a67;
+    margin-top: 10px;
+    letter-spacing: 0.3px;
+}
+
+h2 {
+    font-family: "cofo-raffine", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Optional: smooth fade for large screens */
+@media (min-width: 768px) {
+    .hero-content h1 {
+        font-size: 5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+}
+
+.info-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 3rem 2rem;
+}
+
+.info-text {
+    max-width: 600px;
+    flex: 1;
+}
+
+.image-container {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff8f6;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+}
+
+.image-container img {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.add-info-section {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding: 3rem 2rem;
+    color: #9D8A6F;
+}
+
+.whitebox {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
