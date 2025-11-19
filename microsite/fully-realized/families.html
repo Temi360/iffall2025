@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore fragrance families and how personality influences scent preferences." />
+    <title>Fragrance Families — Microsite — Temi Ijisesan</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/udr3hjn.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="The Fragrance Wheel Logo" />
+                <span>The Fragrance Wheel</span>
+            </a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="edwardswheel.html">EDWARD'S WHEEL</a></li>
+            <li><a href="families.html">FAMILIES</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="container">
+        <header class="hero-section">
+            <h1>Fragrance Families</h1>
+        </header>
+
+        <section class="intro-section content-section">
+            <p>
+                Various suggestions have been put forth about the relationship between a person's favorite scent family
+                and their personality.
+                Stephen V. Dowthwaite, founder of PerfumersWorld, claimed that "Our choices in perfume are influenced by
+                the image we want to portray."
+            </p>
+        </section>
+
+        <section class="personality-preferences content-section content-grid">
+            <div class="content-block">
+                <h2>Personality & Preferences</h2>
+                <p>
+                    According to Dowthwaite, very feminine personalities gravitate toward Florals family while very
+                    masculine personalities prefer the Woody family.
+                </p>
+            </div>
+            <div class="content-block">
+                <p>
+                    Young people tend to like fruity, creamy, and vanilla scents, young adults prefer citrus and
+                    metallic scents,
+                    and mature adults enjoy heavy white flowers and Chypres.
+                </p>
+                <p>
+                    Elegant, sophisticated personalities enjoy aldehydes, powdery notes and leathers,
+                    while earthy, practical personalities prefer tobacco, spice and green notes.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Temi Ijisesan. The Fragrance Wheel.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !expanded);
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

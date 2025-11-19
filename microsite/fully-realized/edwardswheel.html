@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Learn about Michael Edwards' Fragrance Wheel, a classification system for perfumes and fragrances." />
+
+    <title>Edward's Wheel &mdash; Microsite &mdash; Temi Ijisesan</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/udr3hjn.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="The Fragrance Wheel Logo" />
+                <span>The Fragrance Wheel</span>
+            </a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="edwardswheel.html">EDWARD'S WHEEL</a></li>
+            <li><a href="families.html">FAMILIES</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <header class="hero-section">
+            <h1>Michael Edward's Wheel</h1>
+        </header>
+
+        <section class="content-section edwards-bio-section">
+            <p>
+                Michael Anthony Edwards (born 10 December 1943) is a British fragrance taxonomist, historian, and
+                founding editor
+                of <em>Fragrances of the World</em>, the largest guide to perfume classification. His lectures and
+                writings,
+                including the book <em>Perfume Legends: French Feminine Fragrances</em>, pioneered critical scholarship
+                on the
+                history of perfumery, while his fragrance wheel marked a major innovation in perfume retail. He resides
+                in
+                Australia, France, and the United States.
+            </p>
+        </section>
+
+        <section class="edwards-wheel-info content-grid">
+            <div class="content-block">
+                <img class="edwardswheel" src="images/edwardsfragrancewheel.png"
+                    alt="Michael Edwards' Fragrance Wheel showing four main families: Woody, Floral, Amber, and Fresh, with their subfamilies" />
+            </div>
+            <div class="content-block">
+                <h2>The Wheel</h2>
+                <div id="scent-description">
+                    <p>
+                        Developed by a perfume expert to help retailers and consumers, Edwards's wheel consists of a
+                        primary
+                        scent
+                        family (Woody, Floral, Amber, Fresh), divided into subfamilies (Floral Amber, Soft Amber,
+                        Aromatic,
+                        Citrus).
+                        Many of the subfamilies were in turn divided into Fresh, Crisp, Classical, and Rich composition
+                        gradings.
+                        Prior to 2010 Fougère group was placed at the center of this wheel.
+                    </p>
+                    <p>
+                        In this classification scheme, Chanel No.5, which is traditionally classified as a "Floral
+                        Aldehyde"
+                        would be
+                        located under Soft Floral sub-group, and "Amber" scents would be placed within the Oriental
+                        group.
+                    </p>
+                </div>
+                <div class="scent-nav-buttons">
+                    <a href="#" id="explore-button" class="explore-button">Explore Scent sub-families</a>
+                    <button id="prev-scent" class="explore-button" aria-label="Previous scent" style="display:none;">←
+                        Prev</button>
+                    <button id="next-scent" class="explore-button" aria-label="Next scent" style="display:none;">Next
+                        →</button>
+                    <button id="return-overview" class="explore-button" style="display:none; margin-left:auto;">Return
+                        to Overview</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="accent-section content-section info-section reverse-layout">
+            <div class="info-text">
+                <h2>CLASS HIGHLIGHT: CHYPRES</h2>
+                <p>
+                    As a class, Chypres are more difficult to place since they would be located under parts of the
+                    Oriental and
+                    Woody families. For instance, Guerlain Mitsouko, which is classically identified as a chypre will be
+                    placed
+                    under Mossy Woods, but Hermès Rouge, a chypre with more floral character, would be placed under
+                    Floral Oriental.
+                </p>
+            </div>
+
+            <img class="perfume-bottle-img" src="images/chypre.png" alt="Chypre Fragrance Bottle Image" />
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Temi Ijisesan. The Fragrance Wheel.</p>
+    </footer>
+
+    <script>
+        const scentSubfamilies = [
+            { name: "Floral", highlight: "Fresh cut; flowers" },
+            { name: "Soft Floral", highlight: "Aldehydes; powdery notes" },
+            { name: "Floral Amber", highlight: "Orange blossom; sweet spices" },
+            { name: "Soft Amber", highlight: "Incense; amber" },
+            { name: "Amber", highlight: "Oriental; resins" },
+            { name: "Woody Amber", highlight: "Sandalwood; Patchouli" },
+            { name: "Woody", highlight: "Aromatic woods; vetiver" },
+            { name: "Mossy Woods", highlight: "Oakmoss; amber" },
+            { name: "Dry Woods", highlight: "Dry woods; leather" },
+            { name: "Fresh", highlight: "Lavender; aromatic herbs" },
+            { name: "Citrus", highlight: "Bergamot; citrus oils" },
+            { name: "Water", highlight: "Marine; aquatic notes" },
+            { name: "Green", highlight: "Galbanum; green notes" },
+            { name: "Fruity", highlight: "Berries; fruits" },
+        ];
+
+        let currentIndex = 0;
+
+        const scentDescDiv = document.querySelector('#scent-description');
+        const exploreBtn = document.getElementById('explore-button');
+        const prevBtn = document.getElementById('prev-scent');
+        const nextBtn = document.getElementById('next-scent');
+        const returnBtn = document.getElementById('return-overview');
+
+        // Store the original overview content so we can restore it later
+        const overviewContent = scentDescDiv.innerHTML;
+
+        function updateScentDescription(index) {
+            const { name, highlight } = scentSubfamilies[index];
+            scentDescDiv.innerHTML = `<h3> Subfamily: ${name}</h3><p>Examples: ${highlight}</p>`;
+        }
+
+        exploreBtn.addEventListener('click', e => {
+            e.preventDefault();
+            currentIndex = 0;
+            updateScentDescription(currentIndex);
+            exploreBtn.style.display = 'none';
+            prevBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            returnBtn.style.display = 'inline-block';
+        });
+
+        prevBtn.addEventListener('click', e => {
+            e.preventDefault();
+            currentIndex = (currentIndex - 1 + scentSubfamilies.length) % scentSubfamilies.length;
+            updateScentDescription(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', e => {
+            e.preventDefault();
+            currentIndex = (currentIndex + 1) % scentSubfamilies.length;
+            updateScentDescription(currentIndex);
+        });
+
+        returnBtn.addEventListener('click', e => {
+            e.preventDefault();
+            scentDescDiv.innerHTML = overviewContent;
+            exploreBtn.style.display = 'inline-block';
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            returnBtn.style.display = 'none';
+        });
+
+        // Hamburger toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !expanded);
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
