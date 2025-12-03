@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Learn about fragrance wheels and how to categorize scents using classification systems like Michael Edwards' wheel." />
+    <title>The Fragrance Wheel — Temi Ijisesan</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/udr3hjn.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="The Fragrance Wheel Logo" />
+                <span>The Fragrance Wheel</span>
+            </a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="edwardswheel.html">EDWARD'S WHEEL</a></li>
+            <li><a href="families.html">PERSONALITIES</a></li>
+        </ul>
+    </nav>
+    <main id="main-content">
+        <header class="hero-section">
+            <div class="hero-content">
+                <h1>The Fragrance<br />Wheel</h1>
+                <p>How to categorize and master your scents.</p>
+            </div>
+        </header>
+
+        <section class="content-section info-section">
+            <div class="info-text content-block">
+                <h2>WHAT IS IT?</h2>
+                <p>
+                    A fragrance wheel, also known as aroma wheel, fragrance circle, perfume wheel, or smell wheel, is a
+                    circular
+                    diagram showing the inferred relationships among olfactory groups based upon similarities and
+                    differences in
+                    their odor. The groups bordering one another are implied to share common olfactory characteristics.
+                    The
+                    fragrance wheel is frequently used as a classification tool in oenology and perfumery.
+                </p>
+                <button class="explore-button"><a href="edwardswheel.html">Explore Edward's
+                        Wheel</a></button>
+            </div>
+
+            <img class="perfume-bottle-img" src="images/perfumebottle.png" alt="Fragrance Wheel Diagram" />
+        </section>
+
+        <section class="content-section add-info-section">
+            <div class="whitebox jellenek-wheel content-block">
+                <h2>PAUL JELLENEK'S WHEEL</h2>
+                <p>
+                    The first example of a fragrance wheel was conceived by Austrian perfumer Paul Jellinek and titled
+                    the Odor
+                    Effects Diagram, published in the original German edition of his book The Practice of Modern
+                    Perfumery
+                </p>
+            </div>
+
+            <div class="whitebox other-wheels content-block">
+                <h2>OTHER WHEELS</h2>
+                <p>
+                    Other notable versions include the Fragrance Circle, developed in 1979 by U. Harder at Haarman &
+                    Reimer, the
+                    Wine Aroma Wheel, from 1984 by sensory chemist Ann C. Noble, and the Fragrance Wheel, created in
+                    1992 by
+                    perfumery taxonomist Michael Edwards.
+                </p>
+            </div>
+        </section>
+
+    </main>
+    <button id="backToTopBtn" aria-label="Back to top">↑ Top</button>
+
+    <footer>
+        <p>&copy; 2025 Temi Ijisesan. The Fragrance Wheel <a
+                href="https://en.wikipedia.org/wiki/Fragrance_wheel">Source:Wikipedia</a>.</p>
+    </footer>
+</body>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+        hamburger.setAttribute('aria-expanded', !expanded);
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }); window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            backToTopBtn.style.opacity = '1';
+            backToTopBtn.style.pointerEvents = 'auto';
+        } else {
+            backToTopBtn.style.opacity = '0';
+            backToTopBtn.style.pointerEvents = 'none';
+        }
+    });
+</script>
+
+</html>

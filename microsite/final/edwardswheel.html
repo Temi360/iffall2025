@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Learn about Michael Edwards' Fragrance Wheel, a classification system for perfumes and fragrances." />
+
+    <title>Edward's Wheel &mdash; Microsite &mdash; Temi Ijisesan</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/udr3hjn.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="The Fragrance Wheel Logo" />
+                <span>The Fragrance Wheel</span>
+            </a>
+        </div>
+
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="edwardswheel.html">EDWARD'S WHEEL</a></li>
+            <li><a href="families.html">PERSONALITIES</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <header class="hero-section">
+            <h1>Michael Edward's Wheel</h1>
+        </header>
+
+        <section class="content-section edwards-bio-section">
+            <p>
+                Michael Anthony Edwards (born 10 December 1943) is a British fragrance taxonomist, historian, and
+                founding editor
+                of <em>Fragrances of the World</em>, the largest guide to perfume classification. His lectures and
+                writings,
+                including the book <em>Perfume Legends: French Feminine Fragrances</em>, pioneered critical scholarship
+                on the
+                history of perfumery, while his fragrance wheel marked a major innovation in perfume retail. He resides
+                in
+                Australia, France, and the United States.
+            </p>
+        </section>
+
+        <section class="edwards-wheel-info content-grid">
+            <div class="content-block">
+                <img id="wheel-image" class="edwardswheel" src="images/edwardsfragrancewheel.png"
+                    alt="Michael Edwards' Fragrance Wheel showing four main families: Woody, Floral, Amber, and Fresh, with their subfamilies" />
+            </div>
+            <div class="content-block">
+                <h2>The Wheel</h2>
+                <div id="scent-description">
+                    <p>
+                        Developed by a perfume expert to help retailers and consumers, Edwards's wheel consists of a
+                        primary scent
+                        family (Woody, Floral, Amber, Fresh), divided into subfamilies (Floral Amber, Soft Amber,
+                        Aromatic, Citrus).
+                        Many of the subfamilies were in turn divided into Fresh, Crisp, Classical, and Rich composition
+                        gradings.
+                        Prior to 2010 Fougère group was placed at the center of this wheel.
+                    </p>
+                    <p>
+                        In this classification scheme, Chanel No.5, which is traditionally classified as a "Floral
+                        Aldehyde" would be
+                        located under Soft Floral sub-group, and "Amber" scents would be placed within the Oriental
+                        group.
+                    </p>
+                </div>
+                <div class="scent-nav-buttons">
+                    <a href="#scent-carousel" id="explore-button" class="explore-button">Explore Scent
+                        sub-families</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="scent-carousel-section">
+            <div class="carousel-container">
+                <div id="scent-carousel" class="carousel">
+
+                    <button class="carousel-btn prev" id="prev-btn" aria-label="Previous">‹</button>
+
+                    <div class="carousel-window">
+                        <div class="carousel-track"></div>
+                    </div>
+
+                    <button class="carousel-btn next" id="next-btn" aria-label="Next">›</button>
+
+                </div>
+            </div>
+        </section>
+
+        <div id="scent-info-panel" class="info-panel">
+            <div class="info-panel-content">
+                <span id="close-panel" class="close">&times;</span>
+                <img id="panel-image" alt="" />
+                <h2 id="panel-name"></h2>
+                <p id="panel-description"></p>
+                <p id="panel-notes"></p>
+                <p id="panel-examples"></p>
+            </div>
+        </div>
+    </main>
+    <button id="backToTopBtn" aria-label="Back to top">↑Back to the Top</button>
+
+    <footer>
+        <p>&copy; 2025 Temi Ijisesan. The Fragrance Wheel <a
+                href="https://en.wikipedia.org/wiki/Fragrance_wheel">Source:Wikipedia</a>.</p>
+    </footer>
+
+    <script>
+        const scentSubfamilies = [
+            { image: "images/floral.png", name: "Floral", description: "Pure and intense floral compositions dominated by a single flower or bouquet", notes: " Rose, Jasmine, Tuberose, Gardenia, Carnation", examples: "Joy by Jean Patou, Fracas, Carnal Flower" },
+            { image: "images/soft_floral.png", name: "Soft Floral", description: "Delicate and powdery florals with aldehydic or soft musky undertones", notes: "Lily of the Valley, Violet, Iris, Aldehydes, Powdery notes", examples: "Chanel No. 5, Diorissimo, Anais Anais" },
+            { image: "images/floral_amber.png", name: "Floral Amber", description: "Floral heart with warm amber and vanilla base, creating sweet sensuality", notes: "Orange Blossom, Ylang-Ylang, Vanilla, Benzoin, Tonka Bean", examples: "Hypnotic Poison, Flowerbomb, La Vie Est Belle" },
+            { image: "images/soft_amber.png", name: "Soft Amber", description: "Soft and warm amber compositions with a hint of sweetness", notes: "Benzoin, Tonka Bean, Vanilla, Amber", examples: "Ambre Nuit, L'Ambre des Merveilles" },
+            { image: "images/amber.png", name: "Amber", description: "Rich and opulent amber scents with resinous and balsamic notes", notes: "Labdanum, Myrrh, Benzoin", examples: "Ambre Sultan, Tom Ford Amber Absolute" },
+            { image: "images/woody_amber.png", name: "Woody Amber", description: "Woody fragrances with a warm amber base", notes: "Sandalwood, Patchouli, Amber", examples: "Santal 33, Ambre 114" },
+            { image: "images/woody.png", name: "Woody", description: "Earthy and aromatic wood scents", notes: "Cedarwood, Vetiver, Sandalwood", examples: "Terre d'Hermès, Tam Dao" },
+            { image: "images/mossy_woods.png", name: "Mossy Woods", description: "Woody fragrances with a mossy undertone", notes: "Oakmoss, Amber", examples: "Chanel No. 19, Miss Dior" },
+            { image: "images/dry_woods.png", name: "Dry Woods", description: "Dry and rugged wood scents", notes: "Dry woods, Leather", examples: "Tom Ford Oud Wood, Gucci Guilty" },
+            { image: "images/fresh.png", name: "Fresh", description: "Crisp and clean scents with a hint of nature", notes: "Lavender, Aromatic herbs", examples: "Dior Sauvage, Acqua di Gio" },
+            { image: "images/citrus.png", name: "Citrus", description: "Bright and zesty scents from citrus fruits", notes: "Bergamot, Citrus oils", examples: "Neroli Portofino, Eau d'Orange Verte" },
+            { image: "images/water.png", name: "Water", description: "Light and airy scents reminiscent of water", notes: "Marine, Aquatic notes", examples: "Issey Miyake L'Eau d'Issey, Davidoff Cool Water" },
+            { image: "images/green.png", name: "Green", description: "Fresh and crisp scents from green plants", notes: "Galbanum, Green notes", examples: "Chanel No. 19, Gucci Bloom" },
+            { image: "images/fruity.png", name: "Fruity", description: "Juicy and sweet scents from fruits", notes: "Berries, Fruits", examples: "Dolce & Gabbana Light Blue, Escada Cherry in the Air" },
+        ];
+
+        const track = document.querySelector(".carousel-track");
+        const prevButton = document.getElementById('prev-btn');
+        const nextButton = document.getElementById('next-btn');
+
+        const infoPanel = document.querySelector(".info-panel");
+        const closeInfo = document.getElementById("close-panel");
+
+        const panelImage = document.getElementById("panel-image");
+        const panelName = document.getElementById("panel-name");
+        const panelDescription = document.getElementById("panel-description");
+        const panelNotes = document.getElementById("panel-notes");
+        const panelExamples = document.getElementById("panel-examples");
+
+        const itemWidth = 150;
+        let currentPosition = 0;
+
+        scentSubfamilies.forEach((scent, index) => {
+            const item = document.createElement("div");
+            item.classList.add("carousel-item");
+
+            item.innerHTML = `
+        <img class = "carousel-img" src="${scent.image}" alt="${scent.name}">
+        <p>${scent.name}</p>
+      `;
+
+            item.addEventListener("click", () => openInfoPanel(index));
+
+            track.appendChild(item);
+        });
+
+        function moveCarousel(direction) {
+            const maxScroll = -(itemWidth * (scentSubfamilies.length) - track.parentElement.offsetWidth);
+
+            if (direction === 'next') {
+                currentPosition -= itemWidth;
+                if (currentPosition < maxScroll) {
+                    currentPosition = maxScroll;
+                }
+            } else if (direction === 'prev') {
+                currentPosition += itemWidth;
+                if (currentPosition > 0) {
+                    currentPosition = 0;
+                }
+            }
+            track.style.transform = `translateX(${currentPosition}px)`;
+        }
+
+        prevButton.addEventListener("click", () => moveCarousel('prev'));
+        nextButton.addEventListener("click", () => moveCarousel('next'));
+
+        function openInfoPanel(index) {
+            const scent = scentSubfamilies[index];
+
+            panelImage.src = scent.image;
+            panelImage.alt = scent.name;
+            panelName.textContent = scent.name;
+            panelDescription.innerHTML = `<strong>Description:</strong> ${scent.description}`;
+            panelNotes.innerHTML = `<strong>Notes:</strong> ${scent.notes}`;
+            panelExamples.innerHTML = `<strong>Examples:</strong> ${scent.examples}`;
+
+            infoPanel.classList.add("show");
+        }
+
+        closeInfo.addEventListener("click", () => {
+            infoPanel.classList.remove("show");
+        });
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !expanded);
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        const backToTopBtn = document.getElementById('backToTopBtn');
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

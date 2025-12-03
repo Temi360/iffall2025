@@ -1,0 +1,992 @@
+:root {
+    --color-primary: #2b4c47;
+    --color-secondary: #487b6f;
+    --color-accent: #9d8a6f;
+    --color-bg-start: #FFB5A6;
+    --color-bg-middle: #FFFCF5;
+    --color-bg-end: #487B6F;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--color-bg-start), var(--color-bg-middle), var(--color-bg-end));
+    font-family: "Kantumruy Pro", sans-serif;
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+
+em {
+    font-style: oblique;
+}
+
+p,
+h2,
+h1 {
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-family: "Kantumruy Pro", sans-serif;
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 20;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--color-primary);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    top: 0;
+    clip: auto;
+    overflow: visible;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: translateY(-3px);
+    color: var(--color-secondary);
+}
+
+.logo-link img {
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-link:hover img {
+    transform: translateY(-2px);
+}
+
+.logo-link span {
+    font-size: 1.2rem;
+    font-family: "cofo-raffine", sans-serif;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--color-secondary);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover {
+    color: var(--color-secondary);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:focus {
+    outline: none;
+}
+
+/* === Hero Section === */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem;
+    text-align: center;
+    min-height: 30vh;
+}
+
+h1 {
+    font-family: "cofo-raffine", sans-serif;
+    font-weight: 400;
+    font-size: 6.5rem;
+    line-height: 1.1;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.personality-divs {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-right: 20px;
+    border-radius: 15px;
+
+
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+
+
+.personality-preferences {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+}
+
+.personality-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.personality-image {
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+
+.content-block {
+    flex: 1;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-primary);
+}
+
+
+
+.content-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.content-grid {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+}
+
+.content-block {
+    flex: 1;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-section img:not(.perfume-bottle-img) {
+    width: 220px;
+    height: auto;
+}
+
+.info-section p,
+.families-info p {
+    max-width: 65ch;
+    line-height: 1.8;
+}
+
+.add-info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: left;
+    color: var(--color-accent);
+}
+
+.accent-section {
+    padding-left: 3rem;
+    border-left: 3px solid var(--color-secondary);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.accent-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+.accent-section p {
+    max-width: 65ch;
+    line-height: 1.8;
+    color: var(--color-primary);
+}
+
+.whitebox {
+    background-color: transparent;
+    padding: 2rem;
+    flex: 1 1 300px;
+    color: var(--color-primary);
+}
+
+.whitebox:hover {
+    transform: translateY(-3px);
+}
+
+/* Headings */
+h2 {
+    font-family: "cofo-raffine", sans-serif;
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+/* Edwards Wheel Info Section */
+.edwards-wheel-info {
+    display: flex;
+    align-items: left;
+    gap: 3rem;
+    padding: 4rem 2rem;
+    margin-top: 8rem;
+}
+
+.edwards-wheel-info>div {
+    flex: 1;
+}
+
+.edwards-wheel-info p {
+    max-width: 65ch;
+    line-height: 1.8;
+}
+
+.edwardswheel {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Families Info */
+.families-info {
+    padding: 2rem;
+}
+
+.edwards-bio-section {
+    max-width: 900px;
+    padding: 0 1.5rem;
+    color: var(--color-primary);
+}
+
+.edwards-bio-section .whitebox {
+    padding: 2rem 2.5rem;
+    color: var(--color-primary);
+    transition: transform 0.2s ease;
+}
+
+.edwards-bio-section .whitebox:hover {
+    transform: translateY(-3px);
+}
+
+.edwards-bio-section h2 {
+    font-family: "cofo-raffine", sans-serif;
+    font-weight: 400;
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.edwards-bio-section p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-primary);
+}
+
+/* Perfume bottle image animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.perfume-bottle-img {
+    width: 300px;
+    height: 350px;
+    ;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Buttons */
+.explore-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    color: white;
+    font-family: "Kantumruy Pro", sans-serif;
+    text-decoration: none;
+    background-color: var(--color-bg-end);
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--color-secondary);
+}
+
+.explore-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 123, 111, 0.2);
+}
+
+.explore-button:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+scent-nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    padding: 12px 16px;
+    font-family: kantumruy pro, sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-accent);
+    /* your primary color */
+    color: white;
+    cursor: pointer;
+    display: none;
+    /* hide by default */
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+}
+
+.scent-nav-buttons button.explore-button,
+.scent-nav-buttons a.explore-button {
+    padding: 0.8rem 1.6rem;
+    font-family: "Kantumruy Pro", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0;
+    min-width: 110px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Push Return to Overview button to the far right */
+.scent-nav-buttons #return-overview {
+    margin-left: auto;
+    /* optionally: align-self: flex-start; */
+}
+
+/* Hover and focus effects */
+.scent-nav-buttons button.explore-button:hover,
+.scent-nav-buttons a.explore-button:hover {
+    background-color: transparent;
+    color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 123, 111, 0.2);
+}
+
+
+.scent-nav-buttons button.explore-button:focus,
+.scent-nav-buttons a.explore-button:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+
+.accent-section {
+    border-left: none;
+    padding-left: 1rem;
+}
+
+
+
+.carousel-container {
+    height: auto;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carousel-btn {
+    background: #2b4c47;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    user-select: none;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+    margin: 10px;
+}
+
+.carousel-btn:hover {
+    background: #487b6f;
+}
+
+.carousel-window {
+    overflow: hidden;
+    flex-grow: 1;
+    border-radius: 12px;
+    padding: 30px;
+
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 600px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 12px;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.carousel-item {
+    flex: 0 0 fit-content;
+    width: 300px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.carousel-item:hover {
+    transform: translateY(-4px);
+}
+
+.carousel-img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    user-select: none;
+}
+
+scent-carousel-section h2 {
+    text-align: left;
+}
+
+
+.info-panel {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.info-panel.show {
+    display: flex;
+}
+
+.scent-carousel-section h2 {
+    text-align: left;
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: #2b4c47;
+}
+
+.info-panel-content {
+    background: white;
+    padding: 24px 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.info-panel-content img {
+    width: 180px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    user-select: none;
+}
+
+.info-panel-content h2 {
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+    color: #2b4c47;
+}
+
+.info-panel-content p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #888;
+    user-select: none;
+    transition: color 0.3s;
+    z-index: 10;
+}
+
+.close:hover {
+    color: #2b4c47;
+}
+
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* min width
+
+/* max width */
+@media (max-width: 900px) {
+    .info-section {
+        flex-direction: column;
+        text-align: left;
+    }
+
+
+    .info-section img.perfume-bottle-img {
+        margin: 1.5rem auto 0 auto;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+
+    .edwards-wheel-info {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .edwards-wheel-info>div {
+        flex: none;
+        width: 100%;
+    }
+
+    .edwards-wheel-info>div:first-child {
+        order: 1;
+        margin-bottom: 1.5rem;
+    }
+
+    .edwards-wheel-info>div:last-child {
+        order: 2;
+    }
+
+    .edwards-wheel-info p {
+        max-width: none;
+        margin-bottom: 1.5rem;
+    }
+
+    .edwards-wheel-info .explore-button {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    .edwardswheel {
+        max-width: 80%;
+        height: auto;
+        margin: 0 auto 2rem;
+    }
+
+    .content-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .personality-preferences {
+        flex-direction: column;
+
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+
+    .carousel-item {
+        width: 250px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        /* just below navbar */
+        right: 0;
+        height: 250px;
+        width: 250px;
+        background: var(--color-bg-middle);
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1.5rem 2rem 2rem;
+        box-shadow: -4px 0 12px rgba(72, 123, 111, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .logo-link {
+        margin: 0;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+        height: 30px;
+    }
+
+
+    /* Hide original nav links (horizontal) */
+    .nav-links li {
+        margin: 0;
+    }
+
+    /* Optional: style links inside the slide-out menu */
+    .nav-links a {
+        font-size: 1.25rem;
+    }
+
+    .edwards-bio-section {
+        max-width: 100%;
+        margin: 2rem 1rem;
+        padding: 0 1rem;
+        text-align: left;
+    }
+
+    .edwards-bio-section .whitebox {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .edwards-bio-section h2 {
+        font-size: 2rem;
+    }
+
+    .edwards-bio-section p {
+        font-size: 1rem;
+    }
+
+    .carousel-container {
+        max-width: 650px;
+    }
+
+
+
+    .personality-divs {
+        flex-direction: column;
+        flex-wrap: wrap;
+
+
+    }
+
+    .personality-image {
+        display: none;
+    }
+
+    .carousel-window {
+        padding: 0px;
+    }
+
+    .info-panel-content {
+        max-width: 300px;
+        padding: 1rem;
+    }
+
+    .info-panel-content img {
+        width: 150px;
+    }
+
+    .info-panel-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .info-panel-content p {
+        font-size: 0.9rem;
+
+    }
+
+    #backToTopBtn {
+        display: block;
+    }
+
+}
+
+
+
+
+
+@media (max-width: 400px) {
+
+    p {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
+
+    .content-section,
+    .info-section,
+    .edwards-wheel-info {
+        padding: 1.5rem 1rem;
+    }
+
+    .content-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .edwardswheel,
+    .perfume-bottle-img {
+        width: 90%;
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .explore-button {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        margin-top: 2.5rem;
+        box-sizing: border-box;
+    }
+
+    .accent-section {
+        padding-left: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .scent-nav-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .scent-nav-buttons button.explore-button,
+    .scent-nav-buttons a.explore-button {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .carousel {
+        max-width: 200px;
+    }
+
+    .carousel {
+        max-width: 300px;
+    }
+
+    .carousel-img {
+        max-width: 80px;
+        height: auto;
+    }
+
+    .carousel-item:hover {
+        transform: none
+    }
+
+    .info-panel-content {
+        max-width: 200px;
+        padding: 1rem;
+    }
+
+    .info-panel-content img {
+        width: 120px;
+    }
+
+    .info-panel-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .info-panel-content p {
+        font-size: 0.9rem;
+
+    }
+}
