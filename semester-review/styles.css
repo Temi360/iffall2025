@@ -47,12 +47,12 @@ h1 {
 }
 
 h2,
-h3 {
+h3,
+p {
     font-family: "futura-100", sans-serif;
     font-weight: 300;
     font-style: normal;
     color: #222c27;
-    font-style: italic;
 
 
 }
@@ -85,7 +85,7 @@ div:hover {
 }
 
 div:hover h2,
-div:hover h3 {
+div:hover h3 div:hover p {
     color: #f3ebdb;
 }
 
